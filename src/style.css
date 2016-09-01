@@ -1,0 +1,106 @@
+@font-face{
+    font-family: 'fira-sans';
+    src: url('https://assets.usafootball.com/fonts/FiraSans-Light.eot');
+    src: url('https://assets.usafootball.com/fonts/FiraSans-Light.eot') format('embedded-opentype'),
+    url('https://assets.usafootball.com/fonts/FiraSans-Light.woff2') format('woff2'),
+    url('https://assets.usafootball.com/fonts/FiraSans-Light.woff') format('woff'),
+    url('https://assets.usafootball.com/fonts/FiraSans-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*
+Font: 		Alternate Gothic No3 D
+Style: 		Regular
+URL: 		https://www.youworkforthem.com/font/T1166/alternate-gothic
+Foundry: 	URW++
+Foundry: 	https://www.youworkforthem.com/designer/204/urw
+Copyright:	Copyright 2010 URW++ Design & Development
+Version: 	17
+Created:	March 20, 2015
+License: 	https://www.youworkforthem.com/font-license
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted
+			from using the WebFonts(s) listed without a purchased license.
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+    font-family: 'alternate-gothic-no-3-d';
+    src: url('https://assets.usafootball.com/fonts/alternate-gothic-no3-d.eot');
+    src: url('https://assets.usafootball.com/fonts/alternate-gothic-no3-d.eot?#iefix') format('embedded-opentype'),
+    url('https://assets.usafootball.com/fonts/alternate-gothic-no3-d.woff2') format('woff2'),
+    url('https://assets.usafootball.com/fonts/alternate-gothic-no3-d.woff') format('woff'),
+    url('https://assets.usafootball.com/fonts/alternate-gothic-no3-d.ttf') format('truetype'),
+    url('https://assets.usafootball.com/fonts/alternate-gothic-no3-d.svg#youworkforthem') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    color: #092549;
+    font-family: 'fira-sans', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'alternate-gothic-no-3-d';
+    text-transform: uppercase;
+}
+
+#root{
+    top: 80px;
+    position:relative;
+}
+
+
+/********************************************/
+/* Fix header styles coming from nav.min.js */
+
+@media (max-width: 767px) {
+    .front #site {
+        padding-top: 0 !important;
+    }
+}
+
+#mobile .mobile-top {
+    margin-bottom: 0;
+}
+
+/* END nav.min.js fixes */
+/************************/
+
+
+
+#video1 {
+    height: 175px;
+    width: 280px;
+    margin: 0 auto;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #video1 {
+        height: 100%;
+        width: 100%;
+        min-height: 313px;
+        min-width: 500px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #video1 {
+        min-height: 400px;
+        min-width: 640px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+    #video1 {
+        min-height: 500px;
+        min-width: 800px;
+    }
+}

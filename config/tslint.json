@@ -1,0 +1,126 @@
+{
+  "rules": {
+    /*
+     * Start TypeScript specific enforcement
+     */
+    "member-ordering": [
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
+    ],
+    "no-internal-module": true,
+    "no-namespace": [
+      true,
+      "allow-declarations"
+    ],
+    "no-reference": true,
+    /*
+     * Start functionality enforcement
+     */
+    "curly": true,
+    "forin": true,
+    "label-position": true,
+    "label-undefined": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-conditional-assignment": true,
+    "no-construct": true,
+    "no-duplicate-variable": true,
+    "no-empty": true,
+    "no-eval": true,
+    "no-shadowed-variable": true,
+    "no-switch-case-fall-through": true,
+    "no-unreachable": true,
+    "no-unused-expression": true,
+    "no-unused-variable": [
+      true,
+      "react"
+    ],
+    "no-use-before-declare": true,
+    "no-var-keyword": true,
+    "radix": true,
+    "switch-default": true,
+    "triple-equals": true,
+    "use-isnan": true,
+    "use-strict": [
+      true,
+      "check-module"
+    ],
+    /*
+     * Start maintainability enforcement
+     */
+    "eofline": true,
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "linebreak-style": [
+      true,
+      "LF"
+    ],
+    "max-line-length": [
+      true,
+      120
+    ],
+    "no-default-export": true,
+    "no-mergeable-namespace": true,
+    "no-trailing-whitespace": false,
+    //TODO - Errrr Wut?!?
+    "object-literal-sort-keys": true,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    /*
+     * Start style enforcement
+     */
+    "align": [
+      true,
+      "parameters",
+      "arguments",
+      "statements"
+    ],
+    "class-name": true,
+    "new-parens": true,
+    "no-consecutive-blank-lines": true,
+    "one-line": [
+      true,
+      "check-catch",
+      "check-finally",
+      "check-else",
+      "check-open-brace",
+      "check-whitespace"
+    ],
+    "one-variable-per-declaration": [
+      true,
+      "ignore-for-loop"
+    ],
+    "quotemark": [
+      true,
+      "double",
+      "avoid-escape"
+    ],
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-type",
+      "check-typecast"
+    ]
+  }
+}
