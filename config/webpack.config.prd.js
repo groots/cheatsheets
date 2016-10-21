@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var failPlugin = require('webpack-fail-plugin');
 
 module.exports = {
     entry: [
@@ -8,7 +9,8 @@ module.exports = {
     ],
     output: {
         path: "./dist",
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: '/'
     },
     resolve: {
         extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
@@ -25,6 +27,7 @@ module.exports = {
     },
 
     plugins: [
+        failPlugin,
         new HtmlWebpackPlugin({
           hash: true,
           filename: "index.html",
@@ -42,7 +45,8 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
           compress: {
             screw_ie8: true,
-            warnings: false
+            warnings: false,
+            drop_console: true
           }
         })
     ],

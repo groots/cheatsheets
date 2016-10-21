@@ -39,35 +39,4 @@ function loadApp() {
   }
 }
 
-function navFailed() {
-  //TODO
-  console.log("Nav load failed");
-}
-
-$(document).ready(function() {
-  //Load the nav bar
-  $.getScript(Config.NAV_URL)
-    .done(function(script: any, textStatus: any) {
-      USAFNav.load({
-        assetsDomain: Config.ASSETS_URL,
-        cakeDomain: Config.CAKE_URL,
-        drupalDomain: Config.DRUPAL_URL,
-        environment: Config.ENVIRONMENT,
-        function: "TDB",
-        membershipEndpoint: Config.BASE_URL + "v1/user/memberships",
-      });
-    })
-    .fail(function(jqxhr: any, settings: any, exception: any) {
-      navFailed();
-      loadApp();
-    }
-  );
-
-  // Listen for nav bar load events
-  $(document).on("navLoadEvent", (event: any, viewName: any) => {
-    console.log("Fired nav event - " + viewName);
-    if ("main.topNav" === viewName) {
-      loadApp();
-    }
-  });
-});
+loadApp();

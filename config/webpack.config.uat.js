@@ -12,10 +12,6 @@ module.exports = {
         filename: "bundle.js",
         publicPath: '/'
     },
-
-    // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
-
     resolve: {
         extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
@@ -25,7 +21,7 @@ module.exports = {
             { test: /\.tsx?$/, loaders: ["babel", "ts-loader"] },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5")
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]")
             }
         ]
     },
@@ -38,13 +34,20 @@ module.exports = {
           inject: "body",
           template: "./src/index.html"
         }),
-        new ExtractTextPlugin("app.css", { allChunks: true }),
+        new ExtractTextPlugin('app.css', { allChunks: true }),
         new webpack.DefinePlugin({
           "process.env": {
             "NODE_ENV": JSON.stringify("production")
           },
           //Set the environment based on setting a node environment variable (ex: 'ENV=prd webpack')
           ENV: JSON.stringify(`${process.env.ENV}`)
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            screw_ie8: true,
+            warnings: false,
+            drop_console: true
+          }
         })
     ],
 

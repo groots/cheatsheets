@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var WebpackNotifierPlugin = require('webpack-notifier');
+var failPlugin = require('webpack-fail-plugin');
 
 module.exports = {
     entry: [
@@ -37,18 +38,19 @@ module.exports = {
     },
 
     plugins: [
+        failPlugin,
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-          hash: true,
-          filename: "index.html",
-          inject: "body",
-          template: "./src/index.html"
+            hash: true,
+            filename: "index.html",
+            inject: "body",
+            template: "./src/index.html"
         }),
         new WebpackNotifierPlugin({ alwaysNotify: true }),
         new ExtractTextPlugin('app.css', { allChunks: true }),
         new webpack.DefinePlugin({
-          //Set the environment based on setting a node environment variable (ex: 'ENV=prd webpack')
-          ENV: JSON.stringify(`${process.env.ENV}`)
+            //Set the environment based on setting a node environment variable (ex: 'ENV=prd webpack')
+            ENV: JSON.stringify(`${process.env.ENV}`)
         })
     ],
 
